@@ -1,0 +1,35 @@
+int main() {
+    string s;
+    cin>>s;
+    int v=0,c=0;
+    int n=s.size();
+    for(int i=0;i<n;i++)
+    {
+        if((s[i]>='a' && s[i]<='z')||(s[i]>='A' && s[i]<='Z'))
+        {
+        if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u')
+        {
+            v++;
+            s[i]=toupper(s[i]);
+        } 
+        else if(s[i]=='A'||s[i]=='E'||s[i]=='I'||s[i]=='O'||s[i]=='U')
+        {
+            v++;
+            s[i]=tolower(s[i]);
+        } 
+        else if(islower(s[i]))
+        {
+                c++;
+                s[i]=toupper(s[i]);
+        }
+        else if(isupper(s[i]))
+        {
+                c++;
+                s[i]=tolower(s[i]);
+        }
+        }
+        
+    }
+    cout<<c<<" "<<v<<" "<<s;
+    return 0;
+}
