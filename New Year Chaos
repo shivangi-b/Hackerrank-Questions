@@ -1,0 +1,18 @@
+void minimumBribes(vector<int> q) {
+
+int i,b,c=0;
+int n=q.size();
+
+for(i=n-1;i>=0;i--)
+{
+    if(q[i]-(i+1)>2)
+    {
+        cout<<"Too chaotic\n";
+        return;
+    }
+    for (int j =max(0,q[i]-2); j < i; j++)
+            if (q[j] >q[i]) c++;
+}
+ cout<<c<<'\n'; 
+
+}
