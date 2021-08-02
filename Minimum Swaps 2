@@ -1,0 +1,13 @@
+int minimumSwaps(vector<int> arr) {
+int n=arr.size(),t,c=0,i;
+for(i=0;i<n;i++)
+{
+    if(i+1==arr[i])
+    continue;
+    swap(arr[i],arr[arr[i]-1]);
+    c++;
+    i--;
+    
+}
+ return c;
+}
